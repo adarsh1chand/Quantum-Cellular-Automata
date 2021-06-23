@@ -32,7 +32,7 @@ There are two broad versions of the simulation, namely the *classical* version a
    Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla      version, hence this is a natural extension of the vanilla version to continuous domain. However, other custom modifications are possible.
 
 ### Quantum version
-When extending to quantum domain, one natural idea can be to allow the state of a cell to be a quantum state and evolution of the cell is governed by unitary operators. While this is perfectly reasonable extension has been already researched in literature<sup>[1](https://arxiv.org/pdf/1902.07835)</sup>
+When extending to quantum domain, one natural idea can be to allow the state of a cell to be a quantum state and evolution of the cell is governed by unitary operators. While this is perfectly reasonable extension has been already researched in literature<sup>[[1]](https://arxiv.org/pdf/1902.07835)</sup>
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
 All the code is in a single python notebook.<br>
