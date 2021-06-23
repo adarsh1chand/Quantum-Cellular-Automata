@@ -29,7 +29,10 @@ There are two broad versions of the simulation, namely the *classical* version a
    - If a cell's state is > 0.5, then depending on the sum of the states of the cells in the moore neighbourhood (say, <code>S</code>) is <code>S - 1 if 1 <= S < 2</code> and <code>1 if 2 <= S < 3</code> and <code>4 - S if 3 <= S < 4</code>.
    - In cases other than listed above, the cell is **colored black**. <br>
 
-   Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla      version, hence this is a natural extension of the vanilla version to continuous domain. However, custom modifications are possible.
+   Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla      version, hence this is a natural extension of the vanilla version to continuous domain. However, other custom modifications are possible.
+
+### Quantum version
+When extending to quantum domain, one natural idea can be to allow the state of a cell to be a quantum state and evolution of the cell is governed by unitary operators. While this is perfectly reasonable extension has been already researched in literature<sup>[1](https://arxiv.org/pdf/1902.07835)</sup>
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
 All the code is in a single python notebook.<br>
