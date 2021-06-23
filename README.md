@@ -19,8 +19,7 @@ In this project, the *universe* is same as that of in Conway's Game of Life i.e.
 There are two broad versions of the simulation, namely the *classical* version and *quantum* version (technically, its classical-quantum hybrid, but we will refer to it as quantum here). The *classical* version has further two implementations, the *vanilla* version (original Conway's Game of Life) and the *continuous* version. The *quantum* version also has two implementations, the *Qiskit* version and *Cirq* version. <br>
 
 ### Classical version
-- #### Vanilla version 
-This is the original version of the famous Conway's Game of Life. Each cell can be either *dead* (black) or *alive* (red). User can only set any cell either completely red or leave it as it is (completely black). The evolution rule is as follows:
+- **Vanilla version** : This is the original version of the famous Conway's Game of Life. Each cell can be either *dead* (black) or *alive* (red). User can only set any cell either completely red or leave it as it is (completely black). The evolution rule is as follows:
    -  If a cell is **currently red** and it has **exactly two or exactly three neighbours** colored red then, the cell **stays red**.
    -  If a cell is **currently black** and it has **exactly three neighbours** colored red then, the cell is **colored red**.
    -  In cases other than listed above, the cell is **colored black**.   
