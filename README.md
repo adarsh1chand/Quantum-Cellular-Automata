@@ -11,20 +11,20 @@ These objects are of considerable interest because, it has been proven that many
 Conway's Game of Life is one of the well known cellular automata created by British mathematician [John Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) who unfortunately, died due to COVID-19 complications on 11<sup>th</sup> April 2020. In this automata, the *universe* is an infinite grid of cells (squares) with two possible *states*, white (*alive*) and black (*dead*) or vice-versa depending on choice (and implementation). Each cell's state in the next *generation* is given by a simple rule (see below). Note, that in Conway's Game of Life, the *locality* or the cells (called the *neighbours*) which can influence the state of a cell are all contained in the [Moore neighbourhood](https://en.wikipedia.org/wiki/Moore_neighborhood) of a cell, which are precisely the eight cells surrounding any given cell in the grid. <br>
 
 In this project, a hybrid classical-quantum version of Conway's game of life is explored. Apart from this, the simulation also supports vanilla version (original Conway's Game of Life) and continuous version of it (see details below).<br>
-The classical-quantum version of the simulation has implementations in both Qiskit and Cirq. The gameplay of the simulation has been programmed using PyGame. <br>
+The classical-quantum version of the simulation has implementations in both Qiskit and Cirq. The gameplay of the simulation has been programmed using PyGame. All the code is in a single Ipython notebook. <br>
 
 ## Gameplay
-In this project, the *universe* is same as that of in Conway's Game of Life i.e., an infinite grid of black cells (squares). Each cell has a *state* given by a 3-tuple, which also represents the color of the cell in 'RGB' values. This is in contrast with just the two states i.e., *alive* and *dead* states in the original version of Conway's Game of Life. Depending on the version of simulation, only one or all of the color values of a cell can be changed during the evolution. However, when setting the initial configuration of the grid, a user can **only** change red color value of a cell (see below in the **Controls** section). <br>
+In this project, the *universe* is same as that of in Conway's Game of Life i.e., an infinite grid of black cells (squares). Each cell has a *state* given by a 3-tuple, which also represents the color of the cell in 'RGB' values. This is in contrast with just the two states i.e., *alive* and *dead* states in the original version of Conway's Game of Life. Depending on the version of simulation, only one or all of the color values of a cell can be changed during the evolution (see below). However, when setting the initial configuration of the grid, a user can **only** change red color value of a cell (see below in the **Controls** section). <br>
 
 There are two broad versions of the simulation, namely the *classical* version and *quantum* version (technically, its classical-quantum hybrid, but we will refer to it as quantum here). The *classical* version has further two implementations, the *vanilla* version (original Conway's Game of Life) and the *continuous* version. The *quantum* version also has two implementations, the *Qiskit* version and *Cirq* version. <br>
 
 ### Classical version
-- **Vanilla version** : This is the original version of the famous Conway's Game of Life. Each cell can be either *dead* (black) or *alive* (red). User can only set any cell either completely red or leave it as it is (completely black). The evolution rule is as follows:
+- **Vanilla version** : This is the original version of the famous Conway's Game of Life. Each cell can be either *dead* (black) or *alive* (red) i.e, only the Red color value of a cell changes in each new generation and can be either 0 (black) or 255 (red), while the rest of the color values (Blue and Green) are always 0. User can only set any cell either completely red (red color value 255) or leave it as it is (completely black, red color value 0). The evolution rule is as follows:
    -  If a cell is **currently red** and it has **exactly two or exactly three neighbours** colored red then, the cell **stays red**.
    -  If a cell is **currently black** and it has **exactly three neighbours** colored red then, the cell is **colored red**.
    -  In cases other than listed above, the cell is **colored black**.  
 
-- **Continuous version** : Notice, that for the vanilla version above, the rule that dictates the next state of the cell is discrete. This version extends the vanilla version to continuous domain. In this version, cell's *state* is represented by a real number between 0 and 1 (which is then multiplied by 255 to get the red value of a cell's color, hence a cell's 'shade' of Red represents 'chromatically' the cell's state with completely red as 1 and completely black as 0). The evolution rule is as follows:
+- **Continuous version** : Notice, that for the vanilla version above, the rule that dictates the next state of the cell is discrete. This version extends the vanilla version to continuous domain. In this version, cell's *state* is represented by a real number between 0 and 1 (which is then multiplied by 255 to get the Red color value of a cell's color, hence a cell's 'shade' of red represents 'chromatically' the cell's state with completely red as 1 and completely black as 0; Blue and Green color values are identically set to 0). The evolution rule is as follows:
    - If a cell's state is <= 0.5, then depending on the sum of the states of the cells in the moore neighbourhood (say, <code>S</code>) is <code>S - 2 if 2 <= S < 3</code> and <code>4 - S if 3 <= S < 4</code>.
    - If a cell's state is > 0.5, then depending on the sum of the states of the cells in the moore neighbourhood (say, <code>S</code>) is <code>S - 1 if 1 <= S < 2</code> and <code>1 if 2 <= S < 3</code> and <code>4 - S if 3 <= S < 4</code>.
    - In cases other than listed above, the cell is **colored black**. <br>
@@ -32,10 +32,14 @@ There are two broad versions of the simulation, namely the *classical* version a
    Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla      version, hence this is a natural extension of the vanilla version to continuous domain. However, other custom modifications are possible.
 
 ### Quantum version
-When extending to quantum domain, one natural idea can be to allow the state of a cell to be a quantum state and evolution of the cell is governed by unitary operators. While this is perfectly reasonable extension has been already researched in literature<sup>[[1]](https://arxiv.org/pdf/1902.07835)</sup>
+When extending to quantum domain, one natural idea can be to allow the state of a cell to be a quantum state and evolution of the cell is governed by unitary operators. While, this is a perfectly reasonable extension and some of the variants have been already mentioned in literature<sup>[[1]](https://arxiv.org/pdf/1902.07835), [[2]](https://arxiv.org/pdf/1010.4666.pdf)</sup> we take a slightly different approach here. <br>
+
+Firstly, the state of the cell in the quantum version is represented by the full 3-tuple (all three RGB values) which are scaled (scaled to make values between 0 and 1) expected values of Pauli X, Pauli Z and Pauli Y respectively in the *Qiskit* version and Pauli Y, Pauli Z, Pauli X respectively in the *Cirq* version. Although, note that even in the quantum version of the simulation the user is able to change only the first coordinate (or the Red color value) of a cell's state (color). In other words, a cell's state in the quantum version is loosely, the state tomography result for a single qubit upon measurement. The scaling is done as <code>(1 - <P>)/2</code> where, <code>P</code> is any single qubit Pauli out of X, Y, Z. <br>
+
+
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
-All the code is in a single python notebook.<br>
+
 **Controls**:
 - <code>W</code>, <code>A</code>, <code>S</code>, <code>D</code> to move to up, left, right, down.
 - <code>BACKSPACE</code> to reset the grid to last configuration.
