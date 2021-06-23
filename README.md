@@ -38,9 +38,9 @@ Firstly, each cell is acting as a qubit, but the state of a cell is represented 
 
 Now comes the hybrid classical-quantum part. Let S<sub>P</sub> denote the sum of scaled expected values of Pauli operator P (a different sum for each of X, Y, Z) of all cells in the moore neighbourhood of a given cell. Firstly, we calculate the *expected alive strength* for a given cell, which is again a 3-tuple (or a vector or an array). For that, we run the following quantum circuit and observe the expectations of observables X, Y, Z in *specific order* for each cell: <br>
    
-   In *Qiskit* version : e<sup>iS<sub>X</sub></sup>e<sup>iS<sub>Z</sub><\sup>e<sup>iS<sub>Y</sub></sup> applied to |0> state and observe the expectation of X, Z, Y to get the RGB values. <br>
+   In *Qiskit* version : e<sup>iS<sub>X</sub></sup> o e<sup>iS<sub>Z</sub></sup> o e<sup>iS<sub>Y</sub></sup> applied to |0> state and observe the expectation of X, Z, Y to get the RGB values. <br>
    
-   In *Cirq* version : Y<sup>S<sub>Y</sub></sup>Z<sup>S<sub>Y</sub></sup>X<sup>S<sub>Y</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values.
+   In *Cirq* version : Y<sup>S<sub>Y</sub></sup> o Z<sup>S<sub>Y</sub></sup> o X<sup>S<sub>Y</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values.
 
 
 
