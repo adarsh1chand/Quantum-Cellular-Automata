@@ -6,7 +6,7 @@ A hybrid classical-quantum version of Conway's game of life is explored. Apart f
 The simulation has implementations in both Qiskit and Cirq. The gameplay of the simulation has been programmed using PyGame. <br>
 
 **Gameplay**
-Each cell has a state given by a 3-tuple, which also represents the color of a cell in RGB values. This is in contrast with just the two states i.e., alive and dead in the original version of Conway's Game of Life. Depending on the type of simulation only one or all of the color values of a cell can be changed during the evolution. However, while setting the initial configuration of the grid, a user can only change $\textcolor{red}{Red}$ color of a cell (see below in the **Controls** section). <br>
+Each cell has a state given by a 3-tuple, which also represents the color of a cell in RGB values. This is in contrast with just the two states i.e., alive and dead in the original version of Conway's Game of Life. Depending on the type of simulation only one or all of the color values of a cell can be changed during the evolution. However, while setting the initial configuration of the grid, a user can only change <code>\textcolor{red}{Red}</code> color of a cell (see below in the **Controls** section). <br>
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
 All the code is in a single python notebook.<br>
