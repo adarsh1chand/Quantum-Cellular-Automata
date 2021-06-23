@@ -27,9 +27,9 @@ There are two broad versions of the simulation, namely the *classical* version a
 - **Continuous version** : Notice, that for the vanilla version above, the rule that dictates the next state of the cell is discrete. This version extends the vanilla version to continuous domain. In this version, cell's *state* is represented by a real number between 0 and 1 (which is then multiplied by 255 to get the red value of a cell's color, hence a cell's 'shade' of Red represents 'chromatically' the cell's state with completely red as 1 and completely black as 0). The evolution rule is as follows:
    - If a cell's state is <= 0.5, then depending on the sum of the states of the cells in the moore neighbourhood (say, <code>S</code>) is <code>S - 2 if 2 <= S < 3</code> and <code>4 - S if 3 <= S < 4</code>.
    - If a cell's state is > 0.5, then depending on the sum of the states of the cells in the moore neighbourhood (say, <code>S</code>) is <code>S - 1 if 1 <= S < 2</code> and <code>1 if 2 <= S < 3</code> and <code>4 - S if 3 <= S < 4</code>.
-   - In cases other than listed above, the cell is **colored black**.
+   - In cases other than listed above, the cell is **colored black**. <br>
 
-Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla version, hence this is a natural extension of the vanilla version to continuous domain. However, custom modifications are possible.
+   Note, that at the extreme values of <code>S</code> (upper bound and lower bound of each interval mentioned in the rules above), the cell will behave like vanilla      version, hence this is a natural extension of the vanilla version to continuous domain. However, custom modifications are possible.
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
 All the code is in a single python notebook.<br>
