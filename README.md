@@ -21,9 +21,9 @@ There are two broad versions of the simulation, namely the *classical* version a
 ### Classical version
 - #### Vanilla version 
 This is the original version of the famous Conway's Game of Life. Each cell can be either *dead* (black) or *alive* (red). User can only set any cell either completely red or leave it as it is (completely black). The evolution rule is as follows:
-  -  If a cell is **currently red** and it has **exactly two or exactly three neighbours** colored red then, the cell **stays red**.
-  -  If a cell is **currently black** and it has **exactly three neighbours** colored red then, the cell is **colored red**.
-  -  In cases other than listed above, the cell is **colored black**.   
+    -  If a cell is **currently red** and it has **exactly two or exactly three neighbours** colored red then, the cell **stays red**.
+    -  If a cell is **currently black** and it has **exactly three neighbours** colored red then, the cell is **colored red**.
+    -  In cases other than listed above, the cell is **colored black**.   
 
 
 The rules of the evolution are based on custom defined Hamiltonian, which is based on the moore neighbourhood of a cell, but can easily be extended to other hamiltonians based on different neighbourhoods. <br>
