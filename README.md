@@ -46,8 +46,8 @@ Finally, scaling is performed as <code> A<sub>P</sub> = (1 - A<sub>P</sub>)/2</c
    
 The classical part is a non-linear function of the *expected alive strength* which ultimately gives a cell's new state. We employ a similar rule like in the continuous version above, although other rules are possible. The rule is as follows. Each entry in (A<sub>Y</sub>, A<sub>Z</sub>, A<sub>X</sub>) calculated in the above quantum part, is used to get the corresponding entry in the cell' new state (or equivalently the new color values) i.e,, A<sub>X</sub> -> R, A<sub>Z</sub> -> G, A<sub>X</sub> -> B. To get each entry we employ the following (let, A<sub>P</sub> denote *expected alive strength* for given Pauli from Y, Z, X. For clarity, P<sup>th</sup> coordinate is the position at value corresponding to Pauli operator P is present in the tuple *expected alive strength*, for eg: coordinate of X is 2 and coordinate of Y is 0): <br>
    For each P in Y, Z, X:
-   -  If a cells's P<sup>th</sup> coordinate is <= 0.5 and <code>0.2 <= A<sub>P</sub> < 0.3</code> the P<sup>th</sup> coordinate of cell's new state is 1.
-   -  If a cells's P<sup>th</sup> coordinate is > 0.5 and <code>0.2 <= A<sub>P</sub> < 0.4</code> the P<sup>th</sup> coordinate of cell's new state is 1. 
+   -  If the P<sup>th</sup> coordinate of a cell's state is <= 0.5 and <code>0.2 <= A<sub>P</sub> < 0.3</code> the P<sup>th</sup> coordinate of cell's new state is 1.
+   -  If the P<sup>th</sup> coordinate of a cell's state is > 0.5 and <code>0.2 <= A<sub>P</sub> < 0.4</code> the P<sup>th</sup> coordinate of cell's new state is 1. 
    -  In cases other than listed above, the P<sup>th</sup> coordinate of cell's new state is 0. <br>
 
 **Controls**:
