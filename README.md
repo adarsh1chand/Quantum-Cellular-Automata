@@ -42,7 +42,7 @@ Now comes the hybrid classical-quantum part. For the quantum part, we calculate 
 
 SUM OVER ALL CELLS IN MOORE NEIGHBOURHOOD OF GIVEN CELL {g * (2 * P<sup>th</sup> coordinate of a cell's state - 1)} where, g is some constant. <br>
 
-This constant seems to be important in generating the fractal-like patterns. Some values like pi, pi/2, 3.06 gives interesting patterns in *Cirq* version while, in *Qiskit* version, g is again multiplied by 'pi/2' to make the gates consistent across implementations. <br>
+This constant seems to be important in generating the fractal-like patterns. Some values like pi, pi/2, 3.06 gives interesting patterns in *Cirq* version while, in *Qiskit* version, the same of values of g used in Cirq, is again multiplied by 'pi/2' to make the gates consistent across implementations. <br>
    
    In *Qiskit* version : e<sup>-iS<sub>Y</sub></sup> o e<sup>-iS<sub>Z</sub></sup> o e<sup>-iS<sub>X</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values. 'o' is composition of operators. <br>
    
