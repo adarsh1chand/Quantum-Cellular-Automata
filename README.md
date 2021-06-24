@@ -1,5 +1,6 @@
 # Quantum-Cellular-Automata
 Extending [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) to quantum domain. <br>
+
 <img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-1.jpg" width="180"> <img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-2.jpg" width="180"> <img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-3.jpg" width="180"> <img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-4.jpg" width="180"> <img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-5.jpg" width="180"> <p align="center"><img src="https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Oscillator.gif" width="240"></p>
 
 ## Background
