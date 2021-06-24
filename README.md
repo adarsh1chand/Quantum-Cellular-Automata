@@ -1,6 +1,6 @@
 # Quantum-Cellular-Automata
 Extending [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) to quantum domain. <br>
-(https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-1.jpg)
+!(https://github.com/adarsh1chand/Quantum-Cellular-Automata/blob/main/Fractal-1.jpg?raw=true)
 
 ## Background
 Cellular automaton (plural, automata) is a simulation of a many body system, in which each body in the *universe* (the collection of bodies in the system) has a  defined *state* and the evolution of the *state* of a body depends on one *fixed and very specific rule*, applied over and over again to get the resultant states of subsequent *generations* or *iterations*. The rule is typically such that only some *neighbourhood* of a body can influence its state and hence, the universe has a concept of *locality*. <br>
