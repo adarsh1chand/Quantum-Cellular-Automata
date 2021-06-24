@@ -44,7 +44,7 @@ This constant seems to be important in generating the fractal-like patterns. Som
    
    In *Qiskit* version : e<sup>-iS<sub>Y</sub></sup> o e<sup>-iS<sub>Z</sub></sup> o e<sup>-iS<sub>X</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values. 'o' is composition of operators. <br>
    
-   In *Cirq* version : Y<sup>S<sub>Y</sub></sup> o Z<sup>S<sub>Y</sub></sup> o X<sup>S<sub>Y</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values. 'o' is composition of operators. <br>
+   In *Cirq* version : Y<sup>S<sub>Y</sub></sup> o Z<sup>S<sub>Z</sub></sup> o X<sup>S<sub>X</sub></sup> applied to |0> state and observe the expectation of Y, Z, X to get the RGB values. 'o' is composition of operators. <br>
 
 Finally, scaling is performed as <code> A<sub>P</sub> = (1 - A<sub>P</sub>)/2</code> for each P. <br>
    
