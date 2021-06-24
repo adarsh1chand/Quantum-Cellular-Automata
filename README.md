@@ -2,7 +2,7 @@
 Extending [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) to quantum domain. <br>
 
 ## Background
-Cellular automata is a simulation of many body systems, in which each body in the *universe* (the collection of bodies in the system) has a *state* defined and the evolution of the *state* of a body depends on one *fixed and very specific rule*, applied over and over again to get the resultant states of subsequent *generations* or *iterations*. Note, that when the rule is applied on a body, only some *neighbourhood* of the body is considered and hence, the universe has a concept of *locality*. <br>
+Cellular automaton (plural, automata) is a simulation of a many body system, in which each body in the *universe* (the collection of bodies in the system) has a  defined *state* and the evolution of the *state* of a body depends on one *fixed and very specific rule*, applied over and over again to get the resultant states of subsequent *generations* or *iterations*. The rule is typically such that only some *neighbourhood* of a body can influence its state and hence, the universe has a concept of *locality*. <br>
 
 Sometimes these automata are termed as 'Zero-player' games since, these objects have rules (like in a game) but once the game begins, it does not require any further external input to keep the *universe* (or maybe in the language of games, the game board or game scene) evolving. <br>
 
